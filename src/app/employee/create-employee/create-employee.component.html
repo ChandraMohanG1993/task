@@ -1,0 +1,83 @@
+<!-- <form [formGroup]="employeeForm" class="form-horizantal">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class ="panel-title"> Create Employee</h3>
+        </div>
+        <div class="panel-body">
+        <div class="form-group">
+            <label class= " col-sm-2 control-label" for=" fullName"> full Name</label>
+            <div class="col-sm-8">
+                <input id="fullName" formControlName="fullName" type="text"  class="form-control">
+            </div>
+        </div>    
+        <div class="form-group">
+                <label class= " col-sm-2 control-label" for=" email"> Email</label>
+                <div class="col-sm-8">
+                    <input id="email" formControlName="email" type="text" class="form-control">
+                </div>
+            </div> 
+
+        </div>
+
+        <div class="panel-footer">
+            <button class="btn btn-primary" type="submit">Save </button>
+        </div>
+    </div>
+</form> -->
+<div class="container">
+  <div class="card ">
+      <div class="card-header bg-primary">Create employee </div>
+    <div class="card-body ">
+      <div class="container" >
+        <form [formGroup]="employeeForm"  (ngSubmit)="onSubmit()"  name="Create employee">
+         <div class="form-group" >
+           <label for="fullName" class="col-sm-2 control-label">Full Name</label>
+           <div class="col-sm-8">
+             <input type="text" id="fullName" formControlName="fullName"  class="form-control">
+            </div> 
+          </div>
+          <div class="form-group" >
+             <label for="email"  class="col-sm-2 control-label">email</label>
+             <div class="col-sm-8">
+              <input type="text" formControlName="email" class="form-control">
+             </div>
+           </div>
+
+         <div formGroupName="skills">
+             <div class="form-group">
+                 <label for="skillName" class="col-sm-2 control-label">Skill</label>
+                 <div class="col-sm-4">
+                     <input type="text" class="form-control" id="skillName" placeholder="Name" formControlName="skillName">
+                </div>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="experience" placeholder="Experience in years" formControlName="experienceInYears">
+                  </div>
+               </div>
+              <div class="form-group">
+                  <label class="col-md-2 control-label">Proficiency</label>
+                   <div class="col-md-8">
+                      <label class="radio-inline">
+                      <input type="radio" id="proficiency" value="beginer" formControlName="proficiency"> Beginer
+                      </label>
+                    
+                     <label class="radio-inline">
+                     <input type="radio" id="proficiency" value="intermediate" formControlName="proficiency">Intermediate
+                     </label>
+                      
+                     <label class="radio-inline">
+                     <input type="radio" id="proficiency" value="advanced" formControlName="proficiency"> Advanced
+                     </label>
+                   </div>
+                </div>
+         </div>       
+          <div class="panel-footer">
+            <button class="btn btn-primary" type="submit">Save </button>
+            <button class="btn btn-primary" type="button" (onClick)="onLoadData">Load Data </button>
+         </div>
+        </form>
+      </div>      
+    </div>
+        <div class="card-footer bg-primary"></div>
+  </div>
+</div>
+        
